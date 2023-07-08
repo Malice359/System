@@ -72,7 +72,7 @@ pin4.pull = digitalio.Pull.UP
 # Now loop blinking the pin 0 output and reading the state of pin 1 input.
 while True:
     # Blink pin 0 on and then off.
-    #pin0.value = True
+    """#pin0.value = True
     #pin1.value = True
     #pin2.value = True
     #pin3.value = True
@@ -148,7 +148,7 @@ while True:
     pin28.value = False
     pin29.value = False
     pin30.value = False
-    pin31.value = False
+    pin31.value = False"""
     time.sleep(0.5)
     # Read pin 1 and print its state.
     """print("Pin 0 is at a high level: {0}".format(pin0.value))
@@ -157,14 +157,18 @@ while True:
     print("Pin 3 is at a high level: {0}".format(pin3.value))
     print("Pin 4 is at a high level: {0}".format(pin4.value))
     print("Pin 5 is at a high level: {0}".format(pin5.value))"""
+    if not pin0.value and not pin1.value and not pin2.value and not pin3.value and not pin4.value and not pin5.value and not pin6.value:
+        WaterTank = "90"
+    if not pin0.value and not pin1.value and not pin2.value and not pin3.value and not pin4.value and not pin5.value:
+        WaterTank = "75"
     if not pin0.value and not pin1.value and not pin2.value and not pin3.value and not pin4.value:
-        WaterTank = 60
+        WaterTank = "60"
     elif not pin0.value and not pin1.value and not pin2.value and not pin3.value:
-        WaterTank = 50
+        WaterTank = "50"
     elif not pin0.value and not pin1.value and not pin2.value:
-        WaterTank = 40
+        WaterTank = "40"
     elif not pin0.value and not pin1.value:
-        WaterTank = 25
+        WaterTank = "25"
     elif not pin0.value:
-        WaterTank = 10
-    Print("Water Tank is: " + WaterTank+"%")
+        WaterTank = "10"
+    print("Water Tank is: " + WaterTank + "%")
